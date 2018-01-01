@@ -14,7 +14,7 @@ class FenCommand(sublime_plugin.TextCommand):
 
 			pattern = re.compile("	(" + term + ")[ \t]+(.*)")
 
-			for i, line in enumerate(open(r'N:\@md\md\.ENGLISH_FRENCH.md')):
+			for i, line in enumerate(open(r'ENGLISH_FRENCH.md')):
 				for match in re.finditer(pattern, line):
 				 # debug  res = 'Found on line %s: %s' % (i+1, match.group(2))
 				 res = "<<" + match.group(2) + ">> "

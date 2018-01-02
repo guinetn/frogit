@@ -1,29 +1,14 @@
-# SublimeTranslator
->Sublime plugin that prefix selected words with their translation (EN->FR), then use ctrl-z to hide translation. It uses a FR/EN mapping file that a maintain. It help me to improve my translations.
+# Frogit
+>Sublime Text plugin showing the translation of the word having the cursor in a popup. It uses a FR/EN mapping file that a maintain. It help me to remember EN/FR translations.
 
 ## Install
 
-Install `STH` with [Package Control](https://packagecontrol.io) and restart Sublime.
+install it manually. Soon... Install `Frogit` with [Package Control](https://packagecontrol.io) and restart Sublime.
 
 ## Getting started
 
-From any sublime tab, select some words to translate then CTRL+E+E or choose `lang_etof` in the Command Palette *(Cmd+Shift+P)*. This will then run the command in the active tab. 
-
-### Keyboard shortcut
-
-You can also set up a keyboard shortcut to run the command by opening up "Preferences > Key Bindings - User" and adding your shortcut with the `lang_etof` command.
-
-Example:
-
-```json
-[
-	{
-		"keys": ["ctrl+e+e"],
-		"command": "lang_etof"
-	}
-]
-```
+From any sublime tab, right-click an english word, then select 'FrogIt' command to get a popup with the french translation.
 
 ## License
 
-MIT © [Nicolas Guinet](https://nicolasguinet.com)
+MIT © [Nicolas Guinet](https://github.com/guinetn/)

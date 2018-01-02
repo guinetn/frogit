@@ -2,24 +2,35 @@ import sublime
 import sublime_plugin
 import re
 
-class FenCommand(sublime_plugin.TextCommand):
-	def run(self, edit):
-		sels = self.view.sel()
+enfr = r'N:\@md\md\.ENGLISH_FRENCH.md'
+
+class FrogitCommand(sublime_plugin.TextCommand):
+	def run(self, edit):		
 		found = False
-		for sel in sels:
-			term = self.view.substr(sel)
-			if (len(sel) < 3):
-				return
-			# debug self.view.insert(edit, 0, "Searching..." +  term)
+		res = ""
+		term = ""
+		for region in self.view.sel():  #get user selection
+			term = self.view.substr(self.view.word(region))
+			if len(term) > 2:
+				pattern = re.compile("	(" + term + ")[ \t]+(.*)")
 
-			pattern = re.compile("	(" + term + ")[ \t]+(.*)")
+				for line in open(enfr):
+					for match in re.finditer(pattern, line):
+						res = match.group(2) 						
+						found = True
 
-			for i, line in enumerate(open(r'ENGLISH_FRENCH.md')):
-				for match in re.finditer(pattern, line):
-				 # debug  res = 'Found on line %s: %s' % (i+1, match.group(2))
-				 res = "<<" + match.group(2) + ">> "
-				 self.view.insert(edit, 0, res)
-				found = True
-		if (not found):
-			self.view.insert(edit, 0, "<<NOT FOUND>>")	
-
+				html = """
+			    <body>
+			        <style>
+			            div { color: yellow; border:solid 1px black; }			         
+			        </style>
+			        <div>%s</div>			        
+			    </body>
+				""" % (res)	
+				self.view.show_popup(html, max_width=512, on_navigate=lambda x:copy(self.view, x))	
+								
+				# Add missing translation in the en/fr file. Todo: automatic add in right position with a simple translation
+				if (not found):
+					with open(enfr, "a") as f:						
+						f.write(term)
+		    			

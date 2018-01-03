@@ -6,15 +6,15 @@ A
 	abreast							courant
 	accrual							accumulation
 	achieve  						réaliser
-	Achievable						réalisable
-	ACTUAL							actuel
+	achievable						réalisable
+	actual							réél
 	acumen							perspicacité
 	acute 			 				aigu
 	advertise						afficher
 	adviser							conseiller
-	Advisory						consultatif
+	advisory						consultatif
 	aesthetics 						esthétique
-	afar                            au loin
+	afar                            			au loin
 	afford							offrir
 	...
 	awkward							maladroit
@@ -27,9 +27,9 @@ B
 	baking							cuisson
 	badass							Dur à cuire
 	bankroll 						financer	
-	
-		...
-
+	...	
+...
+...
 Y
 	yeast							levure
 	yield							céder, rendement
@@ -37,4 +37,4 @@ Y
 	yielding						cédant
 
 Z
-	Zany							loufoque, toqué
+	zany							loufoque, toqué

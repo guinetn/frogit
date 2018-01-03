@@ -1,9 +1,9 @@
 # Frogit
->Sublime Text plugin showing the translation of the word having the cursor in a popup. It uses a FR/EN mapping file that a maintain. It help me to remember EN/FR translations.
+>Sublime Text plugin showing the translation of the word having the cursor in a popup. It uses a FR/EN mapping file that a maintain. It helps me to remember EN/FR translations without opening my personnal FR/EN mapping file.
 
 ## Install
 
-install it manually. Soon... Install `Frogit` with [Package Control](https://packagecontrol.io) and restart Sublime.
+Install it manually. Soon... Install `Frogit` with [Package Control](https://packagecontrol.io) and restart Sublime.
 
 ## Getting started
 

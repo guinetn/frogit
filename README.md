@@ -1,5 +1,5 @@
 # Frogit
->Sublime Text plugin displaying in a popup the translation of the words selected with multi-cursor. It uses a personnal FR/EN mapping file that a maintain. This tool helps me to quickly remember EN/FR translations without the hassle to open/search in a translation mapping file.
+>Sublime Text plugin displaying in a popup the translation of the words selected with multi-cursor. It uses a personnal FR/EN mapping file that I maintain. This tool helps me to quickly remember EN/FR translations without the hassle to open/search in a translation mapping file. When something is not found it is added to the mapping file for manual translation (automatic will be soon next development)
 
 ![click one word + right-click to translate](img/frogit_demo.png)
 

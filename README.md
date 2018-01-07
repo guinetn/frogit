@@ -6,7 +6,11 @@
 ## Install
 
 1. Install it manually: copy files into the package folder. 
-2. In Frogit.py, set the path to your dictionary file
+2. In Frogit.py, set the path to your dictionary file:
+  
+```
+dictionnary = r'C:\My\ENGLISH_FRENCH.md'
+```
 
 ## Getting started
 

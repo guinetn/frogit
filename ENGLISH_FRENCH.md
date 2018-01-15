@@ -1,4 +1,5 @@
-# EN-FR
+# EN-FR DICTIONARY 
+# SYNTAX:   <space or tab>ENGLISH_WORD<space or tab>FRENCH_WORD
 
 A
 	a spare							une pièce de rechange

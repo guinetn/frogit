@@ -25,19 +25,21 @@ class FrogitCommand(sublime_plugin.TextCommand):
 				# print(term)  # To debug
 				for match in re.finditer(terms[item], line):
 					translated += "• " + item + ": " + match.group(2) + '<br>'					
-					html = """
-				    	<body>
-				        	<style>
-				            	.arrow-down { width: 0; height: 0; border-style: solid; border-width: 7px 5px; border-color: #ffd500 transparent transparent transparent}
-				            	div { color: #ffd500; border:solid 1px black; margin-top:-5px}
-				        	</style>
-				        	<div class="arrow-down"></div>
-				        	<div>%s</div>
-				    	</body>
-					""" % (translated)
-					self.view.show_popup(html, max_width=256)
 
 		# Add missing translation in the dictionnay. Todo: Use an api to automatic add the translation in right position
 		if (len(translated) == 0):
+			translated = term + " Not found"
 			with open(dictionnary, "a") as f:
 				f.write("\r\n"+term)
+
+		html = """
+		    	<body>
+		        	<style>
+		            	.arrow-down { width: 0; height: 0; border-style: solid; border-width: 7px 5px; border-color: #ffd500 transparent transparent transparent}
+		            	div { color: #ffd500; border:solid 1px black; margin-top:-5px}
+		        	</style>
+		        	<div class="arrow-down"></div>
+		        	<div>%s</div>
+		    	</body>
+			""" % (translated)
+		self.view.show_popup(html, max_width=256)

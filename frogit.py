@@ -21,7 +21,7 @@ class FrogitCommand(sublime_plugin.TextCommand):
 					term = term[0:-1]					
 				terms[term] = re.compile("	(" + term + ")[ \t]+(.*)", re.I)  # Case insensitive, precompilation for performances
 
-		if len(terms) > 0:			
+    if len(terms) > 0:			
 			# Search in dictionary file, only 1 pass		
 			
 			for line in open(dictionary):
@@ -53,5 +53,3 @@ class FrogitCommand(sublime_plugin.TextCommand):
 			    	</body>
 				""" % (translations)
 			self.view.show_popup(html, max_width=256)
-		
-		

@@ -7,8 +7,6 @@ dictionary = r'N:\@md\md\.ENGLISH_FRENCH.md'
 
 class FrogitCommand(sublime_plugin.TextCommand):
 	def run(self, edit):				
-
-		# Test words:   afford best translations to user
 		translations = "" 		# items translated 
 		
 		# Make a dictionary of selected words & compiled regex
@@ -54,4 +52,5 @@ class FrogitCommand(sublime_plugin.TextCommand):
 				""" % (translations)
 			self.view.show_popup(html, max_width=256)
 		
-		
+# TESTING AREA
+# afford best translations to user

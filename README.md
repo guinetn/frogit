@@ -5,11 +5,14 @@
 
 ## Install
 
-1. Copy into the package folder (C:\Users\<username>\AppData\Roaming\Sublime Text 3\Packages\Frogit)
-* frogit.py
-* context.sublime-menu
-
-2. Copy ENGLISH_FRENCH.md in an easy accessible folder (you will often access it to change it and add yours translations...)
+  ```
+  1. Copy into the package folder (C:\Users\<username>\AppData\Roaming\Sublime Text 3\Packages\Frogit)
+  * frogit.py
+  * context.sublime-menu
+  ```
+  ```
+  2. Copy ENGLISH_FRENCH.md in an easy accessible folder (you will often access it to change it and add yours translations...)
+  ```
 
 # Setup
 In Frogit.py, set the path to your dictionary file:

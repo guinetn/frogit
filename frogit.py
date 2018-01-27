@@ -13,11 +13,14 @@ class FrogitCommand(sublime_plugin.TextCommand):
 		terms = {}
 		for region in self.view.sel():  #get user selections			
 			term = self.view.substr(self.view.word(region))
-			if len(term) > 2:
-				# Remove trailing 's'
-				if term[-1].lower() == 's':
-					term = term[0:-1]					
-				terms[term] = re.compile("	(" + term + ")[ \t]+(.*)", re.I)  # Case insensitive, precompilation for performances
+			if len(term) > 2:								
+				terms[term] = re.compile("^\s(" + term + "s?)[ \t]+(.*)", re.I)  # Case insensitive, precompilation for performances
+				
+			# Extend lexical search
+			# Transform trailing 'ies' to 'y'			
+			if term[-3:].lower() == 'ies':
+				term = term[0:-3] + 'y'
+				terms[term] = re.compile("^\s(" + term + ")[ \t]+(.*)", re.I)  				
 
 		if len(terms) > 0:			
 			# Search in dictionary file, only 1 pass		

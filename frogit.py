@@ -27,13 +27,13 @@ class FrogitCommand(sublime_plugin.TextCommand):
 			
 			for line in open(dictionary):
 				for item in terms:								
-					#print("..." + term)  # To debug
+					#print("..." + term)  # debugger
 					translated = ""				
 					for match in re.finditer(terms[item], line):
 						translated += "• " + item + ": " + match.group(2) + '<br>'					
 					translations += translated				
 
-			# Add missing terms in the dictionnay. Todo: Use an api to automatic add the translation in right position
+			# Add missing terms in the dictionary. Todo: Use an api to automatic add the translation in right position
 			with open(dictionary, "a") as f:
 				missingTerms = {("• " + x + ": ") for x in terms if x not in translations}   # missing terms in dictionary file				
 				if len(missingTerms) > 0:

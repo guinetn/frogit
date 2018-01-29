@@ -11,10 +11,10 @@ class FrogitCommand(sublime_plugin.TextCommand):
 		
 		# Make a dictionary of selected words & compiled regex
 		terms = {}
-		for region in self.view.sel():  #get user selections			
+		for region in self.view.sel():  #get words 'cursorized'
 			term = self.view.substr(self.view.word(region))
 			if len(term) > 2:								
-				terms[term] = re.compile("^\s(" + term + "s?)[ \t]+(.*)", re.I)  # Case insensitive, precompilation for performances
+				terms[term] = re.compile("^\s(" + term + "s?)[ \t]+(.*)", re.I)  # Case insensitive, precompilation for perf
 				
 			# Extend lexical search
 			# Transform trailing 'ies' to 'y'			
@@ -26,14 +26,13 @@ class FrogitCommand(sublime_plugin.TextCommand):
 			# Search in dictionary file, only 1 pass		
 			
 			for line in open(dictionary):
-				for item in terms:								
-					#print("..." + term)  # debugger
+				for item in terms:													
 					translated = ""				
 					for match in re.finditer(terms[item], line):
 						translated += "• " + item + ": " + match.group(2) + '<br>'					
 					translations += translated				
 
-			# Add missing terms in the dictionary. Todo: Use an api to automatic add the translation in right position
+			# Add missing terms in the dictionnay. Todo: Use an api to automatic add the translation in the right place in the dictionary
 			with open(dictionary, "a") as f:
 				missingTerms = {("• " + x + ": ") for x in terms if x not in translations}   # missing terms in dictionary file				
 				if len(missingTerms) > 0:

@@ -3,7 +3,10 @@ import sublime_plugin
 import re
 
 # SETUP 1/1: Dictionary file path
-dictionary = r'N:\@md\md\.ENGLISH_FRENCH.md'
+dictionary = r'N:\md\md\.ENGLISH_FRENCH.md'
+
+
+# DANGER ZONE. Do not change code below
 
 class FrogitCommand(sublime_plugin.TextCommand):
 	def run(self, edit):				
@@ -17,13 +20,13 @@ class FrogitCommand(sublime_plugin.TextCommand):
 				terms[term] = re.compile("^\s(" + term + "s?)[ \t]+(.*)", re.I)  # Case insensitive, precompilation for perf
 				
 			# Extend lexical search
-			# Transform trailing 'ies' to 'y'			
+			# Transform trailing '…ies' to '…y'			
 			if term[-3:].lower() == 'ies':
 				term = term[0:-3] + 'y'
 				terms[term] = re.compile("^\s(" + term + ")[ \t]+(.*)", re.I)  				
 
 		if len(terms) > 0:			
-			# Search in dictionary file, only 1 pass		
+			# Search in dictionary file (only 1 pass)
 			
 			for line in open(dictionary):
 				for item in terms:													
@@ -54,5 +57,5 @@ class FrogitCommand(sublime_plugin.TextCommand):
 				""" % (translations)
 			self.view.show_popup(html, max_width=256)
 		
-# TESTING AREA
+# TESTING AREA: some words to select with multi-cursor 
 # afford best translations to user

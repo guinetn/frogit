@@ -1,7 +1,7 @@
 # EN-FR DICTIONARY 
 # SYNTAX:   
 <Letter UpperCase>
-	<space or tab>ENGLISH_WORD<x spaces or tabs>FRENCH_WORD
+	<space or tab> ENGLISH_WORD <x spaces or tabs> FRENCH_WORD
 
 A
 	a spare							une pièce de rechange

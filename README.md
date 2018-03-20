@@ -1,5 +1,5 @@
 # Frogit (Make it French)
->Sublime Text plugin displaying in a popup the translation of the words selected with the multi-cursors. It uses a personnal EN/FR dictionary file that I maintain but you can use your own. I create this tool to help me to quickly find EN/FR translation without the hassle to open/search in a dictionary or personnal notes. Not found translations are added to the dictionary file for later manual translation (automatic translation is planned as the next development)
+>Frogit is a sublimeText plugin that display a popup containing the translation of the words selected by the multi-cursors. It uses a personnal EN/FR dictionary file that I maintain but you can use your own. I create this tool to help me to quickly find EN/FR translation without the hassle to open/search in a dictionary or personnal notes. Not found translations are added to the dictionary file for later manual translation (automatic translation is planned as the next development)
 
 ![click one word + right-click to translate](img/frogit_demo.png)
 

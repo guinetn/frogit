@@ -20,7 +20,7 @@ class FrogitCommand(sublime_plugin.TextCommand):
 				terms[term] = re.compile("^\s(" + term + "s?)[ \t]+(.*)", re.I)  # Case insensitive, precompilation for perf
 				
 			# Extend lexical search
-			# Transform trailing '…ies' to '…y'			
+			# Transform trailing '…ies' to '…y'		  + -ness -less -ility	-ed
 			if term[-3:].lower() == 'ies':
 				term = term[0:-3] + 'y'
 				terms[term] = re.compile("^\s(" + term + ")[ \t]+(.*)", re.I)  				
@@ -28,7 +28,7 @@ class FrogitCommand(sublime_plugin.TextCommand):
 		if len(terms) > 0:			
 			# Search in dictionary file (only 1 pass)
 			
-			for line in open(dictionary):
+			for line in open(dictionary, encoding="'utf8"):
 				for item in terms:													
 					translated = ""				
 					for match in re.finditer(terms[item], line):
@@ -36,7 +36,7 @@ class FrogitCommand(sublime_plugin.TextCommand):
 					translations += translated				
 
 			# Add missing terms in the dictionnay. Todo: Use an api to automatic add the translation in the right place in the dictionary
-			with open(dictionary, "a") as f:
+			with open(dictionary, "a", encoding="'utf8") as f:
 				missingTerms = {("• " + x + ": ") for x in terms if x not in translations}   # missing terms in dictionary file				
 				if len(missingTerms) > 0:
 					translations += "______________<br>NOT FOUND:<br>" 		

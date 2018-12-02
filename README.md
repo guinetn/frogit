@@ -8,6 +8,7 @@
 1. Copy into the package folder (C:\Users\<username>\AppData\Roaming\Sublime Text 3\Packages\Frogit)
   * frogit.py
   * context.sublime-menu
+  * package-metadata.json
 
 2. Copy ENGLISH_FRENCH.md in an easy accessible folder (you will often access it to change it and add yours translations...)
 
